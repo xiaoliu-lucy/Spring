@@ -32,7 +32,15 @@ public class TrackCoach implements Coach {
 	public void setTeamName(String teamName) {
 		this.teamName = teamName;
 	}
-
+	
+	// init method
+	public void doMyStartupStuff() {
+		System.out.println("Track coach initialize method");
+	}
+	// destroy method
+	public void doMyDestoryStuff() {
+		System.out.println("Track coach destory method");
+	}
 }
 
 
