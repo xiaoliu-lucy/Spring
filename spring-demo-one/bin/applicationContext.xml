@@ -16,7 +16,9 @@
     </bean>	
     <bean id="trackCoach"
     	class="demo1.coach.TrackCoach">
-    	<constructor-arg ref="myFortuneService"/>
+    	<property name="fortuneService" ref="myFortuneService"/>
+    	<property name="teamName" value="Sunrise"/>
+    	<property name="email" value="sunrise@gmail.com"/>
     </bean>
     <bean id="basketballCoach"
     	class="demo1.coach.BasketballCoach">

@@ -11,16 +11,22 @@ public class HelloSpringApp {
 				new ClassPathXmlApplicationContext("applicationContext.xml");
 				
 		// retrieve bean from spring container
-		String coachReq = "basketballCoach";
+		System.out.println("test for DI");
+		String coachReq = "trackCoach";
 		Coach theCoach = context.getBean(coachReq, Coach.class);
 		
 		// call methods on the bean
 		System.out.println(theCoach.getWorkout());
 		
-		// let's call our new method for fortunes
+		// call our new method for fortunes
 		System.out.println(theCoach.getFortune());
-		
 		// close the context
+		
+		// Inject values
+		TrackCoach trackCoach = context.getBean("trackCoach",TrackCoach.class);
+		System.out.println("test for injecting value");
+		System.out.println(trackCoach.getEmail());
+		System.out.println(trackCoach.getTeamName());
 		context.close();
 	}
 

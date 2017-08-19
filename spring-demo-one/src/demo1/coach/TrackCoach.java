@@ -2,8 +2,10 @@ package demo1.coach;
 
 public class TrackCoach implements Coach {
 	private FortuneService myFortuneService;
-	public TrackCoach(FortuneService myFortuneService) {
-		this.myFortuneService = myFortuneService;
+	private String email;
+	private String teamName;
+	public TrackCoach() {
+
 	}
 	@Override
 	public String getWorkout() {
@@ -13,6 +15,24 @@ public class TrackCoach implements Coach {
 	public String getFortune() {
 		return myFortuneService.getFortune();
 	}
+	// setter method for injection
+
+	public void setFortuneService(FortuneService myFortuneService) {
+		this.myFortuneService = myFortuneService;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getTeamName() {
+		return teamName;
+	}
+	public void setTeamName(String teamName) {
+		this.teamName = teamName;
+	}
+
 }
 
 
