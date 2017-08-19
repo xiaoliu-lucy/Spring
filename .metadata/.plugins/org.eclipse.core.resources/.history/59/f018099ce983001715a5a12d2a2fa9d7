@@ -1,0 +1,10 @@
+package demo1.coach;
+
+public class FootballCoach implements Coach {
+
+	@Override
+	public String getWorkout() {
+		return "Play 50 mins football";
+	}
+
+}

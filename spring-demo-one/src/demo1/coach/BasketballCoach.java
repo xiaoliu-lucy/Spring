@@ -1,0 +1,16 @@
+package demo1.coach;
+
+public class BasketballCoach implements Coach {
+	private FortuneService myFortuneService;
+	public BasketballCoach(FortuneService myFortuneService) {
+		this.myFortuneService = myFortuneService;
+	}
+	@Override
+	public String getWorkout() {
+		return "run 5k basketball";
+	}
+	@Override
+	public String getFortune() {
+		return myFortuneService.getFortune();
+	}
+}

@@ -1,0 +1,11 @@
+package demo1.coach;
+
+public class FootballCoach implements Coach {
+
+	@Override
+	public String getWorkout() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
