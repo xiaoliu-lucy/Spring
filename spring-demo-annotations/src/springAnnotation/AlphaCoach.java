@@ -2,7 +2,7 @@ package springAnnotation;
 
 import org.springframework.stereotype.Component;
 
-@Component("alphaCoach")
+@Component
 public class AlphaCoach implements Coach {
 
 	@Override
