@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+	<!-- load properties file -->
+	<context:property-placeholder location="classpath:coach.properties" />
+	
+    <!-- Define your beans here -->
+    <bean id="myFortuneService"
+    	class="demo1.coach.HappyFortuneService">
+    </bean>
+    
+    <bean id="myCoach"
+    	class="demo1.coach.HappyFortuneService">
+    </bean>	
+    
+    <bean id="trackCoach"
+    	class="demo1.coach.TrackCoach" 
+    	init-method="doMyStartupStuff"
+    	destroy-method="doMyDestoryStuff">
+    	<property name="fortuneService" ref="myFortuneService"/>
+    	<property name="teamName" value="Sunrise"/>
+    	<property name="email" value="sunrise@gmail.com"/>
+    </bean>
+    
+    <bean id="basketballCoach"
+    	class="demo1.coach.BasketballCoach">
+    	<constructor-arg ref="myFortuneService"/>
+    	<property name="teamName" value="${coach.teamName}"/>
+    	<property name="email" value="${coach.email}"/>
+    </bean>
+</beans>
+
+
+
+
+
