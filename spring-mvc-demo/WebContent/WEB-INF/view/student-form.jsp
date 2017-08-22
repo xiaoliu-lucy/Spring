@@ -4,12 +4,22 @@
 <html>
 	<head>
 		<title>Student - Input Form</title>
+		<style>
+			.error {color:red}
+		</style>
 	</head>
 	<body>
 	<form:form action="processForm" modelAttribute="student">
 	First name: <form:input path="firstName" />
 	<br/><br/>
-	Last name: <form:input path="lastName" />
+	Last name*: <form:input path="lastName" />
+	<form:errors path="lastName" cssClass="error" />
+	<br/><br/>
+	Age: <form:input path="age" />
+	<form:errors path="age" cssClass="error" />
+	<br/><br/>
+	Major: <form:input path="major" />
+	<form:errors path="major" cssClass="error" />
 	<br/><br/>
 	<form:select path="country">
 		<form:options items="${student.countryOption}" />

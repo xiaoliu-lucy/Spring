@@ -2,9 +2,24 @@ package springdemo;
 
 import java.util.LinkedHashMap;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import validation.MajorValid;
+
+
 public class Student {
 	private String firstName;
+	@NotNull(message="is required")
+	@Size(min=1,message="is required")
 	private String lastName;
+	@Min(value=0, message="must be greater than zero")
+	@Max(value=99,message="must be smaller than 99")
+	private int age;
+	@MajorValid(value="F",message="Must start with F")
+	private String major;
 	private String country;
 	private String favoritePL;
 	private String[] ops;
@@ -64,5 +79,21 @@ public class Student {
 
 	public void setOps(String[] ops) {
 		this.ops = ops;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getMajor() {
+		return major;
+	}
+
+	public void setMajor(String major) {
+		this.major = major;
 	}
 }
